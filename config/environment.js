@@ -4,6 +4,10 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'library-app',
     environment: environment,
+    contentSecurityPolicy: {
+     'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com"
+    },
+    firebase: 'https://library-tutorial-app.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
