@@ -1,27 +1,3 @@
 <h1>Invitations</h1>
 
-<table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-          <th>ID</th>
-          <th>E-mail</th>
-          <th>Edit Email</th>
-          <th>Delete Email</th>
-      </tr>
-    </thead>
-    <tbody>
-    {{#each model as |invitation|}}
-      <tr>
-        <td>{{invitation.id}}</td>
-        <td>{{invitation.email}}</td>
-        <td><button class="btn btn-primary btn-sm btn-block" {{action 'editEmail'}}>Edit Email</button></td>
-        <td><button class="btn btn-danger btn-sm btn-block" {{action 'deleteEmail' invitation}}>Delete Email</button></td>
-      </tr>
-    {{/each}}
-    </tbody>
-</table>
-
-<div class="form-horizontal form-group form-group-lg row">
-  {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
-  <button class="btn btn-primary btn-lg btn-block" {{action 'editEmail'}}>Change Email</button>
-</div>
+{{invitations-list model=model}}
